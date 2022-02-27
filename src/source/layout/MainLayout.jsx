@@ -1,16 +1,16 @@
 import { makeStyles } from '@mui/styles'
 import React from 'react'
 import Text from '../component/Text'
+import SkillData from '../material/SkillData'
 import Colors from '../values/Colors'
 import Dimens from '../values/Dimens'
 
 
 const StyleLayout = makeStyles({
     parentMenu: {
-        backgroundColor: Colors.white,
         display: 'block',
-        position: 'absolute',
-        marginTop: Dimens.px10
+        position: 'fixed',
+        background: Colors.white
     },
 
     profileContent: {
@@ -27,6 +27,20 @@ const StyleLayout = makeStyles({
         height: 250,
         borderRadius: 125,
         backgroundColor: Colors.normal_Text
+    },
+
+    skillContent: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+
+    aboutContent: {
+        maxWidth: '50%',
+        textAlign: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        left: '25%',
+        marginBottom: Dimens.px30
     }
 })
 
@@ -60,22 +74,23 @@ const MainLayout = (props) => {
 
     return (
         <>
-            <div style={{overflow: 'auto' }}>
+            <div style={{ overflowY: 'auto', overflowX: 'hidden' }}>
                 <div className={styleLayout.parentMenu}>
-                    <ul style={{ listStyleType: 'none', 
-                                margin: 0, paddingTop: 10, 
-                                paddingBottom: 10,  display: 'flex' }}>
+                    <ul style={{
+                        listStyleType: 'none',
+                        margin: 0, paddingTop: 10,
+                        paddingBottom: 10, display: 'flex'
+                    }}>
                         {
                             listMenu.map((data) =>
                                 <li key={data.id} style={{ paddingRight: Dimens.px24, cursor: 'pointer' }}><Text text={data.label} /></li>
                             )
                         }
                     </ul>
-                    <div style={{backgroundColor: Colors.borderColor2, marginTop: Dimens.px10, width: '100vw', height: 1}}></div>
                 </div>
                 <div>
                     <div className={styleLayout.profileContent}>
-                        <div style={{ textAlign: 'center'}}>
+                        <div style={{ textAlign: 'center' }}>
                             <img className={styleLayout.profileImage} />
                             <Text
                                 text={'Noval Raihan Rifansyah'}
@@ -90,10 +105,34 @@ const MainLayout = (props) => {
                             <Text
                                 top={Dimens.px14}
                                 text={'Medan, Indonesia'}
-                                />
+                            />
                             <Text
                                 text={'me@novalraihan.com'}
-                                />
+                            />
+                        </div>
+                    </div>
+                    <div className={styleLayout.aboutContent}>
+                        <Text
+                            text={'About'}
+                            align={'center'}
+                            isBold
+                            top={Dimens.px20}
+                            size={Dimens.px24} />
+                        <Text
+                            text={'me@novalraihan.com'}
+                        />
+                    </div>
+                    <Text
+                        text={'Skills'}
+                        align={'center'}
+                        isBold
+                        top={Dimens.px20}
+                        size={Dimens.px24} />
+                    <div className={styleLayout.skillContent}>
+                        <div className={styleLayout.itemSkill}>
+                            <SkillData label={'Laravel'} sinceLabel={'March 2019'} />
+                            <SkillData label={'Laravel'} sinceLabel={'March 2019'} />
+                            <SkillData label={'React'} sinceLabel={'March 2019'} />
                         </div>
                     </div>
                 </div>
