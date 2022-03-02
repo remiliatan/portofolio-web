@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles'
 import React from 'react'
 import Text from '../component/Text'
+import ItemHistory from '../material/ItemHistory'
 import SkillData from '../material/SkillData'
 import Colors from '../values/Colors'
 import Dimens from '../values/Dimens'
@@ -41,6 +42,19 @@ const StyleLayout = makeStyles({
         position: 'relative',
         left: '25%',
         marginBottom: Dimens.px30
+    },
+
+    parentHistory: {
+        padding: Dimens.px20
+    },
+
+    exprience: {
+        float: 'left'
+    },
+
+    achievment: {
+        float: 'left',
+        maxWidth: '50%'
     }
 })
 
@@ -127,12 +141,39 @@ const MainLayout = (props) => {
                         align={'center'}
                         isBold
                         top={Dimens.px20}
+                        bottom={Dimens.px10}
                         size={Dimens.px24} />
                     <div className={styleLayout.skillContent}>
                         <div className={styleLayout.itemSkill}>
                             <SkillData label={'Laravel'} sinceLabel={'March 2019'} />
                             <SkillData label={'Laravel'} sinceLabel={'March 2019'} />
                             <SkillData label={'React'} sinceLabel={'March 2019'} />
+                        </div>
+                    </div>
+                    <div className={styleLayout.parentHistory}>
+                        <div className={styleLayout.achievment}>
+                            <Text
+                                text={'Achievment'}
+                                isBold
+                                top={Dimens.px20}
+                                bottom={Dimens.px10}
+                                size={Dimens.px24} />
+                            <div className={styleLayout.parentItemHistory}>
+                                <ItemHistory text={'Owns, manages an application forum that has been downloaded more than 90 thousand times'} year={'2020'}/>
+                                <ItemHistory  text={'3rd place in the district level website building competition in 2020'} year={'2020'} />
+                            </div>
+                        </div>
+                        <div className={styleLayout.exprience}>
+                            <Text
+                                text={'Exprience'}
+                                isBold
+                                top={Dimens.px20}
+                                bottom={Dimens.px10}
+                                size={Dimens.px24} />
+                            <div className={styleLayout.parentItemHistory}>
+                                <ItemHistory text={'Dafunda Media'} sub={'Since Agu 2020 - Nove 2020'} year={'2020'}/>
+                                <ItemHistory text={'PT. Nirvana Indonesia Yoga'} sub={'Since Jan 2021 - Agu 2021'}  year={'2021'}/>
+                            </div>
                         </div>
                     </div>
                 </div>

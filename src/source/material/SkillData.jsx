@@ -12,7 +12,7 @@ const SkillData = (props) => {
                  float: 'left', borderRadius: Dimens.px10,
                  marginBottom: Dimens.px20, padding: Dimens.px10,
                  boxShadow: `0px 0px 5px ${Colors.borderColor2}` }}>
-                <img style={{ width: 50, height: 50, backgroundColor: Colors.borderColor }} />
+                <img style={{ width: 150, height: 150, backgroundColor: Colors.borderColor }} />
                 <Text
                     text={props.label}
                     align={'center'}
