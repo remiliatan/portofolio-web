@@ -12,6 +12,7 @@ const StyleLayout = makeStyles({
     parentMenu: {
         display: 'block',
         position: 'fixed',
+        width: '100vw',
         background: Colors.white
     },
 
