@@ -20,6 +20,7 @@ const ItemHistory = (props) => {
                     />
                     <p style={{margin: 0, marginLeft: Dimens.px10}}>
                     <Text
+                        size={Dimens.px16}
                         text={props.text}
                         isBold
                     />

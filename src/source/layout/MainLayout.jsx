@@ -2,6 +2,7 @@ import { makeStyles } from '@mui/styles'
 import React from 'react'
 import Text from '../component/Text'
 import ItemHistory from '../material/ItemHistory'
+import PortofolioData from '../material/PortofolioData'
 import SkillData from '../material/SkillData'
 import Colors from '../values/Colors'
 import Dimens from '../values/Dimens'
@@ -45,16 +46,22 @@ const StyleLayout = makeStyles({
     },
 
     parentHistory: {
-        padding: Dimens.px20
+        padding: Dimens.px20,
+        display: 'flex'
     },
 
     exprience: {
-        float: 'left'
+        maxWidth: '50%'
     },
 
     achievment: {
-        float: 'left',
         maxWidth: '50%'
+    },
+
+    portofolio: {
+        backgroundColor: Colors.white,
+        alignSelf: 'center',
+        marginTop: Dimens.px20
     }
 })
 
@@ -97,7 +104,7 @@ const MainLayout = (props) => {
                     }}>
                         {
                             listMenu.map((data) =>
-                                <li key={data.id} style={{ paddingRight: Dimens.px24, cursor: 'pointer' }}><Text text={data.label} /></li>
+                                <li key={data.id} style={{ paddingRight: Dimens.px24, cursor: 'pointer' }}><Text size={18} text={data.label} /></li>
                             )
                         }
                     </ul>
@@ -159,8 +166,8 @@ const MainLayout = (props) => {
                                 bottom={Dimens.px10}
                                 size={Dimens.px24} />
                             <div className={styleLayout.parentItemHistory}>
-                                <ItemHistory text={'Owns, manages an application forum that has been downloaded more than 90 thousand times'} year={'2020'}/>
-                                <ItemHistory  text={'3rd place in the district level website building competition in 2020'} year={'2020'} />
+                                <ItemHistory text={'Owns, manages an application forum that has been downloaded more than 90 thousand times'} year={'2020'} />
+                                <ItemHistory text={'3rd place in the district level website building competition in 2020'} year={'2020'} />
                             </div>
                         </div>
                         <div className={styleLayout.exprience}>
@@ -171,8 +178,27 @@ const MainLayout = (props) => {
                                 bottom={Dimens.px10}
                                 size={Dimens.px24} />
                             <div className={styleLayout.parentItemHistory}>
-                                <ItemHistory text={'Dafunda Media'} sub={'Since Agu 2020 - Nove 2020'} year={'2020'}/>
-                                <ItemHistory text={'PT. Nirvana Indonesia Yoga'} sub={'Since Jan 2021 - Agu 2021'}  year={'2021'}/>
+                                <ItemHistory text={'Dafunda Media'} sub={'Since Agu 2020 - Nove 2020'} year={'2020'} />
+                                <ItemHistory text={'PT. Nirvana Indonesia Yoga'} sub={'Since Jan 2021 - Agu 2021'} year={'2021'} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styleLayout.portofolio}>
+                        <Text
+                            text={'Portofolio'}
+                            isBold
+                            top={Dimens.px20}
+                            align={'center'}
+                            bottom={Dimens.px10}
+                            size={Dimens.px24} />
+                        <div className={styleLayout.skillContent}>
+                            <div className={styleLayout.itemSkill}>
+                                <PortofolioData/>
+                                <PortofolioData/>
+                                <PortofolioData/>
+                                <PortofolioData/>
+                                <PortofolioData/>
+
                             </div>
                         </div>
                     </div>
