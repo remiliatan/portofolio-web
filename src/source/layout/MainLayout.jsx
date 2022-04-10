@@ -15,6 +15,7 @@ const StyleLayout = makeStyles({
         display: 'block',
         position: 'fixed',
         width: '100vw',
+        zIndex: 99,
         borderBottom: `solid 1px ${Colors.borderColor2}`,
         background: Colors.white
     },
