@@ -1,11 +1,13 @@
 import { makeStyles } from '@mui/styles'
-import React from 'react'
+import React, { useState } from 'react'
+import { CustomDialog } from '../component/dialog/AllDialog'
 import Text from '../component/Text'
 import ItemHistory from '../material/ItemHistory'
 import PortofolioData from '../material/PortofolioData'
 import SkillData from '../material/SkillData'
 import Colors from '../values/Colors'
 import Dimens from '../values/Dimens'
+import PortofolioDetail from './dialog_layout/PortofolioDetail'
 
 
 const StyleLayout = makeStyles({
@@ -92,11 +94,12 @@ const listMenu = [
 
 
 const MainLayout = (props) => {
-
+    const [detailDialog, showDetailDialog] = useState(false)
     const styleLayout = StyleLayout()
 
     return (
         <>
+            <CustomDialog isVisible={detailDialog} onClose={e => showDetailDialog(false)} minWidth={'50vw'} view={<PortofolioDetail/>}/>
             <div style={{ overflowY: 'auto', overflowX: 'hidden' }}>
                 <div className={styleLayout.parentMenu}>
                     <ul style={{
@@ -195,12 +198,11 @@ const MainLayout = (props) => {
                             size={Dimens.px24} />
                         <div className={styleLayout.skillContent}>
                             <div className={styleLayout.itemSkill}>
+                                <PortofolioData onDetailClick={e => showDetailDialog(true)}/>
                                 <PortofolioData/>
                                 <PortofolioData/>
                                 <PortofolioData/>
                                 <PortofolioData/>
-                                <PortofolioData/>
-
                             </div>
                         </div>
                     </div>

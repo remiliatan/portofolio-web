@@ -48,7 +48,7 @@ const PortofolioData = (props) => {
                     text={'Owibu adalah aplikasi sekaligus website tempatnya informasi seputar anime seperti jadwal rilis judul anime, forum diskusi anime, dan semua hal yang berkaitan dengan anime.'}
                     size={Dimens.px14} />
                 <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                    <WrapButton label={'Detail'} onClick={e => console.log('CLICK')}/>
+                    <WrapButton label={'Detail'} onClick={props.onDetailClick}/>
                 </div>
             </div>
 
